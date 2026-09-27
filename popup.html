@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>PostForge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="w-[400px] p-4 bg-gray-950 text-gray-100">
+  <h1 class="text-xl font-bold mb-4">PostForge</h1>
+  
+  <div class="space-y-4">
+    <div class="grid grid-cols-2 gap-2">
+      <button id="capture-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">Screenshot</button>
+      <button id="copy-btn" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition" disabled>Kopieren</button>
+    </div>
+    
+    <div id="preview-container" class="bg-gray-900 border border-gray-800 rounded-lg p-4 h-64 flex items-center justify-center overflow-hidden">
+      <div id="canvas-wrapper" class="inline-block p-4 rounded-xl shadow-2xl">
+        <canvas id="screenshot-canvas"></canvas>
+      </div>
+    </div>
+    
+    <div class="space-y-2">
+      <label class="text-xs text-gray-400">Hintergrundfarbe/Gradient</label>
+      <input type="color" id="bg-color" class="w-full h-8 rounded cursor-pointer" value="#4f46e5">
+      
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="text-xs text-gray-400">Padding</label>
+          <input type="range" id="padding-slider" min="0" max="100" value="40" class="w-full">
+        </div>
+        <div>
+          <label class="text-xs text-gray-400">Radius</label>
+          <input type="range" id="radius-slider" min="0" max="50" value="20" class="w-full">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
